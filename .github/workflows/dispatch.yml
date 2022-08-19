@@ -25,6 +25,7 @@ jobs:
       - name: Build
         run: |
           cd build
+          git pull origin main
           git checkout -b newbranch3
           git pull ${{ github.event.pull_request.head.repo.clone_url }} ${{ github.head_ref }}
           git push --set-upstream origin newbranch3
