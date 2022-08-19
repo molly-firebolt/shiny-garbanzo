@@ -25,6 +25,7 @@ jobs:
       - name: Build
         run: |
           cd build
+          git config pull.ff only 
           git pull origin main
           git checkout -b newbranch3
           git pull ${{ github.event.pull_request.head.repo.clone_url }} ${{ github.head_ref }}
